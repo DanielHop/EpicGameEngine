@@ -1,0 +1,12 @@
+﻿  TestInstance.cpp
+c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\instances\testinstance.cpp(18): warning C4129: 'P': unrecognized character escape sequence
+c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\instances\testinstance.cpp(18): warning C4129: 'C': unrecognized character escape sequence
+c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\instances\testinstance.cpp(18): warning C4129: 'E': unrecognized character escape sequence
+c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\instances\testinstance.cpp(18): warning C4129: 'D': unrecognized character escape sequence
+c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\instances\testinstance.cpp(18): warning C4129: 'B': unrecognized character escape sequence
+c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\instances\testinstance.cpp(19): warning C4129: 'P': unrecognized character escape sequence
+c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\instances\testinstance.cpp(19): warning C4129: 'C': unrecognized character escape sequence
+c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\instances\testinstance.cpp(19): warning C4129: 'E': unrecognized character escape sequence
+c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\instances\testinstance.cpp(19): warning C4129: 'D': unrecognized character escape sequence
+c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\instances\testinstance.cpp(19): warning C4129: 'B': unrecognized character escape sequence
+  EpicGameEngine.vcxproj -> C:\Programming\CPP\EpicGameEngine\EpicGameEngine\Debug\EpicGameEngine.exe
