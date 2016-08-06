@@ -1,0 +1,13 @@
+RENDERING.txt
+
+Requirements:
+-Render
+	-Shader
+		-Input layout
+	-Buffers
+		-Vertexbuffer
+		-Indexbuffer
+
+Workflow:
+	-Feed it vertex array?? for now?
+		

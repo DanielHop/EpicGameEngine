@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EGE\Graphics\ICScreen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="EGE\Content\IContent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,12 +30,21 @@
     <ClCompile Include="EGE\Util\BasicReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EGE\Renderer\Models\Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Renderer\Renderers\IRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Renderer\Renderers\EBasicRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Graphics\EScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EGE\Content\IContent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EGE\Graphics\ICScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EGE\Instances\TestInstance.h">
@@ -56,9 +62,21 @@
     <ClInclude Include="EGE\Util\EGEUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EGE\Renderer\Models\Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Renderer\Renderers\IRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Renderer\Renderers\EBasicRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Graphics\EScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="EGE\Shaders\BasicVertexShader.hlsl" />
-    <FxCompile Include="EGE\Shaders\BasicPixelShader.hlsl" />
+    <FxCompile Include="EGE\Shaders\RawShaders\BasicPixelShader.hlsl" />
+    <FxCompile Include="EGE\Shaders\RawShaders\BasicVertexShader.hlsl" />
   </ItemGroup>
 </Project>

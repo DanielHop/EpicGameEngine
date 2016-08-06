@@ -1,0 +1,11 @@
+PONG.txt
+
+Attributes of a game:
+-Main game loop
+	-Input
+		-Keys
+	-Rendering
+		-Squares  -----> Entity
+		-Letters
+	-Logic
+		-OWN logic

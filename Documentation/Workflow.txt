@@ -1,0 +1,15 @@
+DirectX utility project/library
+
+END-GOALS:
+	-easy to use
+	-fast
+	-Component based
+	-using C++11/14
+	-2D for now
+	-Documentation
+
+NOW-GOALS:
+	-Rendering
+		-Shader support
+	-Inital optimization
+	-Outline

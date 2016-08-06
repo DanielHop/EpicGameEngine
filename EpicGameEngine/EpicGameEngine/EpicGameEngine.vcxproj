@@ -144,28 +144,34 @@
   <ItemGroup>
     <ClCompile Include="EGE\Content\IContent.cpp" />
     <ClCompile Include="EGE\Core\DXApp.cpp" />
+    <ClCompile Include="EGE\Renderer\Models\Sprite.cpp" />
+    <ClCompile Include="EGE\Renderer\Renderers\EBasicRenderer.cpp" />
+    <ClCompile Include="EGE\Renderer\Renderers\IRenderer.cpp" />
     <ClCompile Include="EGE\Util\BasicReader.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="EGE\Graphics\ICScreen.cpp" />
+    <ClCompile Include="EGE\Graphics\EScreen.cpp" />
     <ClCompile Include="EGE\Instances\TestInstance.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EGE\Content\IContent.h" />
     <ClInclude Include="EGE\Core\DXApp.h" />
     <ClInclude Include="EGE\EGE.h" />
-    <ClInclude Include="EGE\Graphics\ICScreen.h" />
+    <ClInclude Include="EGE\Graphics\EScreen.h" />
     <ClInclude Include="EGE\Instances\TestInstance.h" />
+    <ClInclude Include="EGE\Renderer\Models\Sprite.h" />
+    <ClInclude Include="EGE\Renderer\Renderers\EBasicRenderer.h" />
+    <ClInclude Include="EGE\Renderer\Renderers\IRenderer.h" />
     <ClInclude Include="EGE\Util\BasicReader.h" />
     <ClInclude Include="EGE\Util\EGEUtil.h" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="EGE\Shaders\BasicPixelShader.hlsl">
+    <FxCompile Include="EGE\Shaders\RawShaders\BasicPixelShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
     </FxCompile>
-    <FxCompile Include="EGE\Shaders\BasicVertexShader.hlsl">
+    <FxCompile Include="EGE\Shaders\RawShaders\BasicVertexShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
