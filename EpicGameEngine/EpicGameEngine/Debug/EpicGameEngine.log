@@ -1,10 +1,2 @@
-﻿  main.cpp
-c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\ege.h(8): fatal error C1083: Cannot open include file: 'Graphics/ICScreen.h': No such file or directory
-  EBasicRenderer.cpp
-  TestInstance.cpp
-c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\ege.h(8): fatal error C1083: Cannot open include file: 'Graphics/ICScreen.h': No such file or directory
-  EScreen.cpp
-c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\graphics\escreen.cpp(1): fatal error C1083: Cannot open include file: 'ICScreen.h': No such file or directory
-  DXApp.cpp
-c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\ege\ege.h(8): fatal error C1083: Cannot open include file: 'Graphics/ICScreen.h': No such file or directory
-  Generating Code...
+﻿  TestInstance.cpp
+  EpicGameEngine.vcxproj -> C:\Programming\CPP\EpicGameEngine\EpicGameEngine\Debug\EpicGameEngine.exe
