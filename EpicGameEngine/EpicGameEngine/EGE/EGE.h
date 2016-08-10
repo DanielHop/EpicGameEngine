@@ -6,8 +6,8 @@
 #include <d3d11.h>
 
 #include "Graphics/EScreen.h"
+#include "Util/EGEUtil.h"
 #include "Util/BasicReader.h"
-#include "Renderer/Renderers/EBasicRenderer.h"
-
+#include "Shaders\ShaderClasses\ETestShader.h"
 using namespace EGE::Graphics;
 using namespace EGE::Util;

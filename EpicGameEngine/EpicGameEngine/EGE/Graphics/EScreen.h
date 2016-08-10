@@ -2,7 +2,9 @@
 
 #include <Windows.h>
 #include <d3d11.h>
+#include <directXMath.h>
 #include <cassert>
+#include <string>
 
 #include "../Content/IContent.h"
 
@@ -18,36 +20,32 @@ namespace EGE { namespace Graphics{
 		extern UINT						gMsaaQuality;
 		extern bool						gEnable4xMsaa;
 
-		bool FailCheck(HRESULT hr);
+		bool FailCheck(const HRESULT hr, const std::string text = "SOMETHING WENT WRONG NO DEFAULT TEXT SPECIFIED");
+		void ReleaseCom(IUnknown* comptr);
 	}
 
 	namespace Window
 	{
 		extern HINSTANCE	gHInstance;
 		extern HWND			gMainHandle;
-		extern int			gShowCmd, gWidth, gHeight;
+		extern int			gShowCmd;
+		constexpr int gWidth{ 1280 }, gHeight{ 720 };
 		extern bool			gWindowed;
 	}
+
 	class EScreen : public EGE::Content::IContent
 	{
-	public:
-		EScreen(int width, int height);
-		~EScreen();
-		
-		void Prepare();
-		void Update();
-
+	public:		
+		void Prepare()const;
+		void Update()const;
 
 		LRESULT MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 	protected:
-		virtual void ICInit()override;
-		virtual void ICDestroy()override;
+		virtual void IInit()override;
+		virtual void IDestroy()override;
 	private:
-		void WinInit();
-		void DirectXInit();
-
-	private:
-		int mWidth, mHeight;
+		void WinInit() const;
+		void DirectXInit() const;
 	};
 }}

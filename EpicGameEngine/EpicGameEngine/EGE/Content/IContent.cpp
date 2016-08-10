@@ -9,7 +9,7 @@ namespace EGE { namespace Content{
 	void IContent::Init()
 	{
 		MasterInit();
-		ICInit();
+		IInit();
 	}
 
 	void IContent::Destroy()
@@ -17,7 +17,7 @@ namespace EGE { namespace Content{
 		if (!mIsDestroyed)
 		{
 			MasterDestroy();
-			ICDestroy();
+			IDestroy();
 		}
 	}
 

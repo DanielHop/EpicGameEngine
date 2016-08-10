@@ -10,8 +10,8 @@ namespace EGE { namespace Content{
 	protected:
 		~IContent();
 
-		virtual void ICInit() {}
-		virtual void ICDestroy() {}
+		virtual void IInit() {}
+		virtual void IDestroy() {}
 
 		void MasterInit();
 		void MasterDestroy();

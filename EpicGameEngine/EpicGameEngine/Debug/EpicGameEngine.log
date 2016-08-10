@@ -1,2 +1,7 @@
-﻿  TestInstance.cpp
+﻿  main.cpp
+  IShaderProgram.cpp
+  ETestShader.cpp
+  TestInstance.cpp
+  DXApp.cpp
+  Generating Code...
   EpicGameEngine.vcxproj -> C:\Programming\CPP\EpicGameEngine\EpicGameEngine\Debug\EpicGameEngine.exe

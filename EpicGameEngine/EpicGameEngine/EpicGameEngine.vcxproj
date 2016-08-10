@@ -144,9 +144,8 @@
   <ItemGroup>
     <ClCompile Include="EGE\Content\IContent.cpp" />
     <ClCompile Include="EGE\Core\DXApp.cpp" />
-    <ClCompile Include="EGE\Renderer\Models\Sprite.cpp" />
-    <ClCompile Include="EGE\Renderer\Renderers\EBasicRenderer.cpp" />
-    <ClCompile Include="EGE\Renderer\Renderers\IRenderer.cpp" />
+    <ClCompile Include="EGE\Shaders\ShaderClasses\IShaderProgram.cpp" />
+    <ClCompile Include="EGE\Shaders\ShaderClasses\ETestShader.cpp" />
     <ClCompile Include="EGE\Util\BasicReader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="EGE\Graphics\EScreen.cpp" />
@@ -158,9 +157,8 @@
     <ClInclude Include="EGE\EGE.h" />
     <ClInclude Include="EGE\Graphics\EScreen.h" />
     <ClInclude Include="EGE\Instances\TestInstance.h" />
-    <ClInclude Include="EGE\Renderer\Models\Sprite.h" />
-    <ClInclude Include="EGE\Renderer\Renderers\EBasicRenderer.h" />
-    <ClInclude Include="EGE\Renderer\Renderers\IRenderer.h" />
+    <ClInclude Include="EGE\Shaders\ShaderClasses\ETestShader.h" />
+    <ClInclude Include="EGE\Shaders\ShaderClasses\IShaderProgram.h" />
     <ClInclude Include="EGE\Util\BasicReader.h" />
     <ClInclude Include="EGE\Util\EGEUtil.h" />
   </ItemGroup>

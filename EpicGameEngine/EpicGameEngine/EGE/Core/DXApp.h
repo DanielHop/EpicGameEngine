@@ -4,14 +4,20 @@
 
 #include "../EGE.h"
 
+using Timestep = float;
+
 class DXApp
 {
 public:
-	DXApp(HINSTANCE hInstance, int nShowCmd);
+	DXApp(const HINSTANCE hInstance, const int nShowCmd);
 
 	virtual void Init() {}
 	void Run();
 	virtual void Destroy() {}
+
+protected:
+	virtual void Update(const Timestep dt) {}
+	virtual void Render() {}
 private:
-	std::unique_ptr<ICScreen> screen{ new ICScreen{1280, 720} };
+	std::unique_ptr<EScreen> screen{ new EScreen };
 };

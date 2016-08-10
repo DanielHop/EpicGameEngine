@@ -1,10 +1,10 @@
 #include "DXApp.h"
 
-DXApp::DXApp(HINSTANCE hInstance, int nShowCmd)
+DXApp::DXApp(const HINSTANCE hInstance, const int nShowCmd)
 {
 
-	EGE::Graphics::Window::gHInstance = hInstance;
-	EGE::Graphics::Window::gShowCmd = nShowCmd;
+	Window::gHInstance = hInstance;
+	Window::gShowCmd = nShowCmd;
 }
 
 void DXApp::Run()
@@ -23,6 +23,8 @@ void DXApp::Run()
 		else
 		{
 			screen->Prepare();
+			Update(0.0f);
+			Render();
 			screen->Update();
 		}
 	}

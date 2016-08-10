@@ -1,21 +1,29 @@
 #pragma once
 
 #include "../Core/DXApp.h"
-#include "../Util/EGEUtil.h"
 
 using namespace EGE::Util;
+using namespace EGE::Shaders;
+
+struct Vertex
+{
+	float x, y, z;
+};
 
 class TestInstance : public DXApp
 {
 public:
-	TestInstance(HINSTANCE hInstance, int nShowCmd);
+	TestInstance(const HINSTANCE hInstance, const int nShowCmd);
 	~TestInstance();
 
 	void Init() override;
 	void Destroy()override;
 
+protected:
+	void Update(const Timestep dt)override;
+	void Render()override;
 private:
-	Comptr<ID3D11VertexShader> mVs;
-	Comptr<ID3D11PixelShader> mPs;
+	ID3D11Buffer*					pVBuffer{ nullptr };
+	std::unique_ptr<ETestShader>	mShader{ new ETestShader() };
 };
 
