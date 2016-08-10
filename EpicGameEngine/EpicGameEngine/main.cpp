@@ -1,6 +1,6 @@
 #include <windows.h>
 
-#include "EGE\Instances\TestInstance.h"
+#include "Instances/TestInstance.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine, int nShowCmd)
 {
