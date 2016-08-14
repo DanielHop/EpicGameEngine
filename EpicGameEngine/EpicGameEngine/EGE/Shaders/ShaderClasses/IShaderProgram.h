@@ -2,25 +2,27 @@
 
 #include <d3d11.h>
 
-#include "../../Content/IContent.h" 
 #include "../../Graphics/EScreen.h"
 #include "../../Util/BasicReader.h"
 
 using namespace EGE;
 
 namespace EGE { namespace Shaders{
-	class IShaderProgram : public Content::IContent
+	class IShaderProgram
 	{
-	public:
-		IShaderProgram(const std::string VSLocation, const std::string PSLocation);
-		~IShaderProgram();
+	public:		
 		void SetActive()const;
+
+		void Init();
+		void Destroy();
 	protected:
-		void IInit()override;
-		void IDestroy()override;
+		virtual ~IShaderProgram() {}
 
 		virtual void CreateInputLayout(std::vector<uint8_t> vertexShaderBuffer) = 0;
-		
+		virtual void InitializeCBuffers() = 0;
+		virtual void CleanUpBuffers() = 0;
+
+		void SetShaderPaths(const std::string VSLocation, const std::string PSLocation);
 		void CompileShaders();
 	protected:
 		std::string					mVertexShaderPath,

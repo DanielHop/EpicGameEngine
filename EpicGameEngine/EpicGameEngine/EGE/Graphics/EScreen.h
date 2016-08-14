@@ -5,8 +5,10 @@
 #include <directXMath.h>
 #include <cassert>
 #include <string>
+#include <atlcore.h>
+#include <functional>
 
-#include "../Content/IContent.h"
+using MessageloopFunction = std::function<LRESULT (HWND, UINT, WPARAM, LPARAM)>;
 
 namespace EGE { namespace Graphics{
 	namespace D3D
@@ -33,19 +35,33 @@ namespace EGE { namespace Graphics{
 		extern bool			gWindowed;
 	}
 
-	class EScreen : public EGE::Content::IContent
+	class EScreen
 	{
 	public:		
 		void Prepare()const;
 		void Update()const;
 
 		LRESULT MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+		~EScreen() {}
 
-	protected:
-		virtual void IInit()override;
-		virtual void IDestroy()override;
+		void Init();
+		void Destroy();
+
+		void SetMessageloopFunction(MessageloopFunction mlf) { this->mlf = mlf; }
 	private:
 		void WinInit() const;
 		void DirectXInit() const;
+
+	private:
+		MessageloopFunction mlf{ [] (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) -> LRESULT
+		{ 
+			switch (msg)
+			{
+			case WM_DESTROY:
+				PostQuitMessage(0);
+				return 0;
+			} 
+			return DefWindowProc(hwnd, msg, wParam, lParam); 
+		} };
 	};
 }}

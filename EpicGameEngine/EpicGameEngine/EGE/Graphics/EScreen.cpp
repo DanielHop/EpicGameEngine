@@ -1,4 +1,5 @@
 #include "EScreen.h"
+
 namespace
 {
 	EGE::Graphics::EScreen* gEScreenMainWndProc = 0;
@@ -11,15 +12,16 @@ MainWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 }
 
 
+
 namespace EGE { namespace Graphics{
 	namespace D3D
 	{
-		ID3D11Device*			gDevice				{nullptr};
-		IDXGISwapChain*			gSwapChain			{nullptr};
-		ID3D11DeviceContext*	gDeviceContext		{nullptr};
-		ID3D11RenderTargetView*	gRenderTargetView	{nullptr};
-		ID3D11Texture2D*		gDepthStencilBuffer {nullptr};
-		ID3D11DepthStencilView*	gDepthStencilView	{nullptr};
+		ID3D11Device*			gDevice;
+		IDXGISwapChain*			gSwapChain;
+		ID3D11DeviceContext*		gDeviceContext;
+		ID3D11RenderTargetView*	gRenderTargetView;
+		ID3D11Texture2D*			gDepthStencilBuffer;
+		ID3D11DepthStencilView*	gDepthStencilView;
 		UINT					gMsaaQuality;
 		bool					gEnable4xMsaa;
 
@@ -35,8 +37,8 @@ namespace EGE { namespace Graphics{
 
 		void ReleaseCom(IUnknown* comptr)
 		{
-			if (comptr != nullptr)
-				comptr->Release();
+			comptr->Release();
+		//	comptr = nullptr;
 		}
 	}
 
@@ -48,7 +50,7 @@ namespace EGE { namespace Graphics{
 		bool		gWindowed;
 	}
 
-	void EScreen::IInit()
+	void EScreen::Init()
 	{
 
 		gEScreenMainWndProc = this;
@@ -72,16 +74,15 @@ namespace EGE { namespace Graphics{
 		D3D::gSwapChain->Present(0, 0);
 	}
 
-	void EScreen::IDestroy()
+	void EScreen::Destroy()
 	{
 		D3D::ReleaseCom(D3D::gDevice);
-		D3D::ReleaseCom(D3D::gDeviceContext);
 		D3D::ReleaseCom(D3D::gSwapChain);
+		D3D::ReleaseCom(D3D::gDeviceContext);
 		D3D::ReleaseCom(D3D::gRenderTargetView);
 		D3D::ReleaseCom(D3D::gDepthStencilBuffer);
 		D3D::ReleaseCom(D3D::gDepthStencilView);
-
-	}
+	}					
 
 	void EScreen::WinInit() const
 	{
@@ -149,9 +150,7 @@ namespace EGE { namespace Graphics{
 		D3D::gDevice->CheckMultisampleQualityLevels(DXGI_FORMAT_R8G8B8A8_UNORM, 4, &D3D::gMsaaQuality);
 		assert(D3D::gMsaaQuality > 0);
 
-
-
-		DXGI_SWAP_CHAIN_DESC sd;
+				DXGI_SWAP_CHAIN_DESC sd;
 		sd.BufferDesc.Width = Window::gWidth;
 		sd.BufferDesc.Height = Window::gHeight;
 		sd.BufferDesc.RefreshRate.Numerator = 60;
@@ -246,12 +245,6 @@ namespace EGE { namespace Graphics{
 
 	LRESULT EScreen::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
-		switch (msg)
-		{
-		case WM_DESTROY:
-			PostQuitMessage(0);
-			return 0;
-		}
-		return DefWindowProc(hwnd, msg, wParam, lParam);
+		return mlf(hwnd, msg, wParam, lParam);
 	}
 }}

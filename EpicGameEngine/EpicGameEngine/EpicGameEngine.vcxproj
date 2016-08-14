@@ -142,25 +142,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="EGE\Content\IContent.cpp" />
-    <ClCompile Include="EGE\Core\DXApp.cpp" />
+    <ClCompile Include="EGE\Rendering\EBasicRenderer.cpp" />
+    <ClCompile Include="EGE\Rendering\IRenderer.cpp" />
     <ClCompile Include="EGE\Shaders\ShaderClasses\IShaderProgram.cpp" />
-    <ClCompile Include="EGE\Shaders\ShaderClasses\ETestShader.cpp" />
+    <ClCompile Include="EGE\Shaders\ShaderClasses\EBasicShader.cpp" />
     <ClCompile Include="EGE\Util\BasicReader.cpp" />
+    <ClCompile Include="Instances\Prefabs\DXApp.cpp" />
+    <ClCompile Include="Instances\TestInstance.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="EGE\Graphics\EScreen.cpp" />
-    <ClCompile Include="EGE\Instances\TestInstance.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EGE\Content\IContent.h" />
-    <ClInclude Include="EGE\Core\DXApp.h" />
     <ClInclude Include="EGE\EGE.h" />
     <ClInclude Include="EGE\Graphics\EScreen.h" />
-    <ClInclude Include="EGE\Instances\TestInstance.h" />
-    <ClInclude Include="EGE\Shaders\ShaderClasses\ETestShader.h" />
+    <ClInclude Include="EGE\Models\Sprite.h" />
+    <ClInclude Include="EGE\Models\Vec2f.h" />
+    <ClInclude Include="EGE\Models\Vec3f.h" />
+    <ClInclude Include="EGE\Models\Vec4f.h" />
+    <ClInclude Include="EGE\Rendering\EBasicRenderer.h" />
+    <ClInclude Include="EGE\Rendering\IRenderer.h" />
+    <ClInclude Include="EGE\Shaders\ShaderClasses\EBasicShader.h" />
     <ClInclude Include="EGE\Shaders\ShaderClasses\IShaderProgram.h" />
     <ClInclude Include="EGE\Util\BasicReader.h" />
     <ClInclude Include="EGE\Util\EGEUtil.h" />
+    <ClInclude Include="Instances\Prefabs\DXApp.h" />
+    <ClInclude Include="Instances\TestInstance.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="EGE\Shaders\RawShaders\BasicPixelShader.hlsl">

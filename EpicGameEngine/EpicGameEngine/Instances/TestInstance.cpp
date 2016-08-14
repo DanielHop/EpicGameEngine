@@ -10,35 +10,41 @@ TestInstance::TestInstance(const HINSTANCE hInstance, const int nShowCmd)
 
 TestInstance::~TestInstance()
 {
-	D3D::ReleaseCom(pVBuffer);
 }
 
 
 void TestInstance::Init()
 {
-	mShader->Init();
-	mShader->SetActive();
-	Vertex OurVertices[] =
+
+	mRenderer->Init();
+
+	auto nSprites = 200;
+	auto length = 2.0f / (float)nSprites;
+	for (auto y = 0; y < nSprites; y++)
 	{
-		{ 0.0f, 0.5f, 0.0f },
-		{ 0.45f, -0.5, 0.0f },
-		{ -0.45f, -0.5f, 0.0f }
-	};
+		for (auto x = 0; x < nSprites; x++)
+		{
+			sprites.push_back({ { (float)x / (float)nSprites * 2 - 1.f, (float)y / (float)nSprites * 2 - 1.f, 0.f},{ length , length, length}, { 1.0f, 0.0f, 0.0f, 1.0f} });
 
-	   // global
+		}
+	}
 
-	D3D11_SUBRESOURCE_DATA sr;
-	sr.pSysMem = OurVertices;
+	
+	p.range = 1;
+	p.pos = Vec2f{ 0.f, 0.f };
+	p.colour = Vec3f{ 1.0f, 1.0f, 1.0f };
+	p.padding = { 0,0 };
 
-	D3D11_BUFFER_DESC bd;
-	ZeroMemory(&bd, sizeof(bd));
+	mRenderer->SetPointLight(p);
+}
 
-	bd.Usage = D3D11_USAGE_IMMUTABLE;                // write access access by CPU and GPU
-	bd.ByteWidth = sizeof(Vertex) * 3;             // size is the VERTEX struct * 3
-	bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;       // use as a vertex buffer
-	bd.CPUAccessFlags = 0;    // allow CPU to write in buffer
-
-	D3D::gDevice->CreateBuffer(&bd, &sr, &pVBuffer);
+void TestInstance::Keydown(std::string key)
+{
+	if(key == "W")
+		p.pos = { p.pos.x , p.pos.y + 0.01f };
+	if(key == "S")
+		p.pos = { p.pos.x , p.pos.y - 0.01f };
+	mRenderer->SetPointLight(p);
 }
 
 void TestInstance::Update(const Timestep dt)
@@ -48,11 +54,13 @@ void TestInstance::Update(const Timestep dt)
 
 void TestInstance::Render()
 {
-	auto stride = sizeof(Vertex);
-	auto offset = static_cast<UINT>(0);
-	D3D::gDeviceContext->IASetVertexBuffers(0, 1, &pVBuffer, &stride, &offset);
-	D3D::gDeviceContext->Draw(3, 0);
+	mRenderer->Prepare(sprites);
+	auto changeBuf = (mLastRenderer == RENDERERS::EBasicRenderers) ? false : true;
+	mRenderer->Render(changeBuf);
+	mLastRenderer = RENDERERS::EBasicRenderers;
+
 }
 void TestInstance::Destroy()
 {
+	mRenderer->Destroy();
 }

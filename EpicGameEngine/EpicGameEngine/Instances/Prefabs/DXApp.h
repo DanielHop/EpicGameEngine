@@ -8,19 +8,25 @@ using Timestep = float;
 
 using namespace EGE::Util;
 using namespace EGE::Shaders;
+using namespace EGE::Rendering;
+using namespace EGE::Models;
 
 class DXApp
 {
 public:
 	DXApp(const HINSTANCE hInstance, const int nShowCmd);
 
-	virtual void Init() {}
 	void Run();
-	virtual void Destroy() {}
 
 protected:
-	virtual void Update(const Timestep dt) {}
-	virtual void Render() {}
+	virtual void Init() {}
+	virtual void Destroy() {}
+	
+	virtual void Update(const Timestep dt) = 0;
+	virtual void Render() = 0;
+
+	virtual void Keydown(std::string key) {}
+	void InitMessageloop();
 private:
 	std::unique_ptr<EScreen> screen{ new EScreen };
 };

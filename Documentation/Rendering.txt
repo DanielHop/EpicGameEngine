@@ -1,13 +1,18 @@
 RENDERING.txt
 
-Requirements:
--Render
-	-Shader
-		-Input layout
-	-Buffers
-		-Vertexbuffer
-		-Indexbuffer
+Steps to render:
+	1) Read shader					Shader class
+	2) Set activce shader			Shader class
+	3) Set input layout
+	4) Create vertex buffer:		
+		-Create subresource data	Render class
+		-Create buffer description	Render class
+	5) Set buffer					Render class
+	6) Draw							Render class
 
-Workflow:
-	-Feed it vertex array?? for now?
-		
+
+
+Shader class:
+	-Compile shader function
+	-Set input layout function
+	-Activate/deactivate shader

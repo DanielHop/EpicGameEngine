@@ -1,33 +1,31 @@
 #include "IShaderProgram.h"
 
 namespace EGE { namespace Shaders{
-	IShaderProgram::IShaderProgram(const std::string VSLocation, const std::string PSLocation)
-		: mVertexShaderPath{VSLocation}, mPixelShaderPath{PSLocation}
-	{
-	}
-	
-	IShaderProgram::~IShaderProgram()
-	{
-		Destroy();
-	}
-
-	void IShaderProgram::SetActive()const
+		void IShaderProgram::SetActive()const
 	{
 		Graphics::D3D::gDeviceContext->VSSetShader(mVertexShader, NULL, NULL);
 		Graphics::D3D::gDeviceContext->PSSetShader(mPixelShader, NULL, NULL);
 		Graphics::D3D::gDeviceContext->IASetInputLayout(mInputLayout);
 	}
 
-	void IShaderProgram::IInit()
+	void IShaderProgram::Init()
 	{
 		CompileShaders();
+		InitializeCBuffers();
 	}
 
-	void IShaderProgram::IDestroy()
+	void IShaderProgram::Destroy()
 	{
 		Graphics::D3D::ReleaseCom(mVertexShader);
 		Graphics::D3D::ReleaseCom(mPixelShader);
 		Graphics::D3D::ReleaseCom(mInputLayout);
+		CleanUpBuffers();
+	}
+
+	void IShaderProgram::SetShaderPaths(const std::string VSLocation, const std::string PSLocation)
+	{
+		mVertexShaderPath = VSLocation;
+		mPixelShaderPath = PSLocation;
 	}
 
 	void IShaderProgram::CompileShaders()

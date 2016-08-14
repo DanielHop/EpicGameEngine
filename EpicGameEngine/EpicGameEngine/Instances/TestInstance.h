@@ -7,6 +7,7 @@ struct Vertex
 	float x, y, z;
 };
 
+
 class TestInstance : public DXApp
 {
 public:
@@ -19,8 +20,15 @@ public:
 protected:
 	void Update(const Timestep dt)override;
 	void Render()override;
+
+	void Keydown(std::string key)override;
 private:
-	ID3D11Buffer*					pVBuffer{ nullptr };
-	std::unique_ptr<ETestShader>	mShader{ new ETestShader() };
+	std::unique_ptr<EBasicRenderer> mRenderer{ new EBasicRenderer() };
+
+	std::vector<Sprite> sprites;
+	RENDERERS mLastRenderer{ RENDERERS::null };
+	SHADERS mLastShader{ SHADERS::null };
+
+	Shaders::PointLight p;
 };
 

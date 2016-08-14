@@ -15,15 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EGE\Content\IContent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EGE\Instances\TestInstance.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EGE\Core\DXApp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,23 +24,26 @@
     <ClCompile Include="EGE\Graphics\EScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EGE\Shaders\ShaderClasses\ETestShader.cpp">
+    <ClCompile Include="EGE\Shaders\ShaderClasses\IShaderProgram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EGE\Shaders\ShaderClasses\IShaderProgram.cpp">
+    <ClCompile Include="Instances\Prefabs\DXApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Rendering\IRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Rendering\EBasicRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Instances\TestInstance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Shaders\ShaderClasses\EBasicShader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EGE\Content\IContent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EGE\Instances\TestInstance.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EGE\Core\DXApp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EGE\EGE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -62,10 +56,34 @@
     <ClInclude Include="EGE\Graphics\EScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EGE\Shaders\ShaderClasses\ETestShader.h">
+    <ClInclude Include="EGE\Shaders\ShaderClasses\IShaderProgram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EGE\Shaders\ShaderClasses\IShaderProgram.h">
+    <ClInclude Include="Instances\Prefabs\DXApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Instances\TestInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Models\Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Rendering\IRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Rendering\EBasicRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Models\Vec3f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Models\Vec4f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Shaders\ShaderClasses\EBasicShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Models\Vec2f.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
