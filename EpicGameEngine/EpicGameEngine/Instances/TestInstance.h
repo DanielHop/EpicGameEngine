@@ -29,6 +29,6 @@ private:
 	RENDERERS mLastRenderer{ RENDERERS::null };
 	SHADERS mLastShader{ SHADERS::null };
 
-	Shaders::PointLight p;
+	PointLight p;
 };
 

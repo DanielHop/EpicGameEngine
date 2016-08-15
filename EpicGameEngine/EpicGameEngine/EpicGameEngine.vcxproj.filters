@@ -21,25 +21,31 @@
     <ClCompile Include="EGE\Util\BasicReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EGE\Graphics\EScreen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EGE\Shaders\ShaderClasses\IShaderProgram.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Instances\Prefabs\DXApp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EGE\Rendering\IRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EGE\Rendering\EBasicRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Instances\TestInstance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EGE\Shaders\ShaderClasses\EBasicShader.cpp">
+    <ClCompile Include="EGE\Rendering\Renderers\EBasicRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Rendering\Renderers\IRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Rendering\Shaders\ShaderClasses\EBasicShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Rendering\Shaders\ShaderClasses\IShaderProgram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Rendering\Shaders\ShaderClasses\ConstantBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Module\Module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EGE\Rendering\Window\EScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,42 +59,51 @@
     <ClInclude Include="EGE\Util\EGEUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EGE\Graphics\EScreen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EGE\Shaders\ShaderClasses\IShaderProgram.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Instances\Prefabs\DXApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Instances\TestInstance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EGE\Models\Sprite.h">
+    <ClInclude Include="EGE\Rendering\Renderers\EBasicRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EGE\Rendering\IRenderer.h">
+    <ClInclude Include="EGE\Rendering\Renderers\IRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EGE\Rendering\EBasicRenderer.h">
+    <ClInclude Include="EGE\Rendering\Shaders\ShaderClasses\EBasicShader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EGE\Models\Vec3f.h">
+    <ClInclude Include="EGE\Rendering\Shaders\ShaderClasses\IShaderProgram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EGE\Models\Vec4f.h">
+    <ClInclude Include="EGE\Rendering\RenderModels\Sprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EGE\Shaders\ShaderClasses\EBasicShader.h">
+    <ClInclude Include="EGE\Util\Math\Vec2f.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EGE\Models\Vec2f.h">
+    <ClInclude Include="EGE\Util\Math\Vec3f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Util\Math\Vec4f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Rendering\Shaders\ShaderClasses\ConstantBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Module\Module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Rendering\Window\EScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Util\Math\Matrix4f.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="EGE\Shaders\RawShaders\BasicPixelShader.hlsl" />
-    <FxCompile Include="EGE\Shaders\RawShaders\BasicVertexShader.hlsl" />
+    <FxCompile Include="EGE\Rendering\Shaders\RawShaders\BasicPixelShader.hlsl" />
+    <FxCompile Include="EGE\Rendering\Shaders\RawShaders\BasicVertexShader.hlsl" />
   </ItemGroup>
 </Project>

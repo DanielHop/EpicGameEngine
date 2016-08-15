@@ -48,6 +48,11 @@ namespace EGE { namespace Graphics{
 		HWND		gMainHandle;
 		int			gShowCmd;
 		bool		gWindowed;
+
+		float AspectRatio()
+		{
+			return (float)gWidth / (float)gHeight;
+		}
 	}
 
 	void EScreen::Init()

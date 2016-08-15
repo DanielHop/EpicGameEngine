@@ -24,6 +24,7 @@ namespace EGE { namespace Graphics{
 
 		bool FailCheck(const HRESULT hr, const std::string text = "SOMETHING WENT WRONG NO DEFAULT TEXT SPECIFIED");
 		void ReleaseCom(IUnknown* comptr);
+		
 	}
 
 	namespace Window
@@ -33,6 +34,7 @@ namespace EGE { namespace Graphics{
 		extern int			gShowCmd;
 		constexpr int gWidth{ 1280 }, gHeight{ 720 };
 		extern bool			gWindowed;
+		float AspectRatio();
 	}
 
 	class EScreen

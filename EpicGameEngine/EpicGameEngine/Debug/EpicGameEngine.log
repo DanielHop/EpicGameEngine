@@ -1,3 +1,3 @@
-﻿  DXApp.cpp
-c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\instances\prefabs\dxapp.cpp(46): error C2446: '==': no conversion from 'const char *' to 'WPARAM'
-  c:\programming\cpp\epicgameengine\epicgameengine\epicgameengine\instances\prefabs\dxapp.cpp(46): note: There is no context in which this conversion is possible
+﻿  TestInstance.cpp
+  EpicGameEngine.vcxproj -> C:\Programming\CPP\EpicGameEngine\EpicGameEngine\Debug\EpicGameEngine.exe
+  EpicGameEngine.vcxproj -> C:\Programming\CPP\EpicGameEngine\EpicGameEngine\Debug\EpicGameEngine.pdb (Full PDB)

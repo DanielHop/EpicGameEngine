@@ -8,13 +8,13 @@ namespace EGE { namespace Shaders{
 		Graphics::D3D::gDeviceContext->IASetInputLayout(mInputLayout);
 	}
 
-	void IShaderProgram::Init()
+	void IShaderProgram::LocalInit()
 	{
 		CompileShaders();
 		InitializeCBuffers();
 	}
 
-	void IShaderProgram::Destroy()
+	void IShaderProgram::LocalDestroy()
 	{
 		Graphics::D3D::ReleaseCom(mVertexShader);
 		Graphics::D3D::ReleaseCom(mPixelShader);

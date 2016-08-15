@@ -5,20 +5,23 @@
 
 #include <d3d11.h>
 
-#include "../Models/Sprite.h"
-#include "../Graphics/EScreen.h"
+#include "../RenderModels/Sprite.h"
+#include "../Window/EScreen.h"
+
+#include "../../Module/Module.h"
 
 namespace EGE { namespace Rendering {	
-	class IRenderer
+	class IRenderer : public Module::Module
 	{
 	public:
 		void Prepare(const std::vector<Models::Sprite> sprites);
 		void Render(const bool shouldSetBuffers)const;
 
-		void Init();
-		void Destroy();
 	protected:
 		virtual ~IRenderer() {}
+		
+		void LocalInit()override;
+		void LocalDestroy()override;
 
 		virtual void InitializeBuffers() = 0;
 		virtual void InitializeShader() = 0;

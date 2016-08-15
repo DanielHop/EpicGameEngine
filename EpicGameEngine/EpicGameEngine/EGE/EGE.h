@@ -6,13 +6,13 @@
 #include <d3d11.h>
 
 
-#include "Graphics\EScreen.h"
+#include "Rendering\Window\Escreen.h"
 
-#include "Models\Sprite.h"
+#include "Rendering\RenderModels\Sprite.h"
 
-#include "Rendering\EBasicRenderer.h"
+#include "Rendering\Renderers\EBasicRenderer.h"
 
-#include "Shaders\ShaderClasses\EBasicShader.h"
+#include "Rendering\Shaders\ShaderClasses\EBasicShader.h"
 
 #include "Util\EGEUtil.h"
 #include "Util\BasicReader.h"

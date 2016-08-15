@@ -6,6 +6,4 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
 {
 	TestInstance test(hInstance, nShowCmd);
 	test.Run();
-
 }
-

@@ -3,8 +3,8 @@
 #include <vector>
 
 #include "IRenderer.h"
-#include "../Models/Vec3f.h"
-#include "../Models/Vec4f.h"
+#include "../../Util/Math/Vec3f.h"
+#include "../../Util/Math/Vec4f.h"
 #include "../Shaders/ShaderClasses/EBasicShader.h"
 
 namespace EGE { namespace Rendering{

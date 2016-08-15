@@ -28,13 +28,13 @@ namespace EGE { namespace Rendering {
 		Graphics::D3D::gDevice->CreateBuffer(&bd, nullptr, &mVertexBuffer);
 	}
 
-	void IRenderer::Init()
+	void IRenderer::LocalInit()
 	{
 		InitializeBuffers();
 		InitializeShader();
 	}
 
-	void IRenderer::Destroy()
+	void IRenderer::LocalDestroy()
 	{
 		Graphics::D3D::ReleaseCom(mVertexBuffer);
 		Graphics::D3D::ReleaseCom(mIndexBuffer);

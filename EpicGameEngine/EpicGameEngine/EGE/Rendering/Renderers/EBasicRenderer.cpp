@@ -32,7 +32,7 @@ namespace EGE { namespace Rendering {
 
 	void EBasicRenderer::AddToStack(const Models::Sprite sprite)
 	{
-		Models::Vec4f colour = sprite.colour;
+		Math::Vec4f colour = sprite.colour;
 		//ABOVE LEFT
 		*dataPtr = { {sprite.pos.x, sprite.pos.y, sprite.pos.z }, colour };
 		dataPtr++;

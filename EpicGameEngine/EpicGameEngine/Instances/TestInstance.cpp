@@ -15,21 +15,23 @@ TestInstance::~TestInstance()
 
 void TestInstance::Init()
 {
+	std::cout << "hi";
 
 	mRenderer->Init();
 
 	auto nSprites = 200;
 	auto length = 2.0f / (float)nSprites;
+	auto xlength = Window::AspectRatio() * 2 / (float)nSprites;
 	for (auto y = 0; y < nSprites; y++)
 	{
 		for (auto x = 0; x < nSprites; x++)
 		{
-			sprites.push_back({ { (float)x / (float)nSprites * 2 - 1.f, (float)y / (float)nSprites * 2 - 1.f, 0.f},{ length , length, length}, { 1.0f, 0.0f, 0.0f, 1.0f} });
+			sprites.push_back({ { (float)x / (float)nSprites * Window::AspectRatio()*2 - Window::AspectRatio(), (float)y / (float)nSprites * 2 - 1.f, 1.f},{ xlength , length, length}, { 1.0f, 0.0f, 0.0f, 1.0f} });
 
 		}
 	}
 
-	
+
 	p.range = 1;
 	p.pos = Vec2f{ 0.f, 0.f };
 	p.colour = Vec3f{ 1.0f, 1.0f, 1.0f };

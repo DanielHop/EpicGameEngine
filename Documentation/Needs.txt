@@ -1,0 +1,15 @@
+-Lightning
+-Basic title sreen loading
+-Basic rendering
+-
+
+
+
+SYSTEMS
+	-game specific
+	-can be outlined
+
+MESSAGES
+	-game specific
+	-Outlined
+

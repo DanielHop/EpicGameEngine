@@ -2,21 +2,29 @@
 
 #include <d3d11.h>
 
-#include "../../Graphics/EScreen.h"
-#include "../../Util/BasicReader.h"
+#include "../../Window/EScreen.h"
+#include "../../../Util/BasicReader.h"
+#include "../../../Util/Math/Vec2f.h"
+#include "../../../Util/Math/Vec3f.h"
+#include "../../../Util/Math/Vec4f.h"
+#include "../../../Util/Math/Matrix4f.h"
+#include "../../../Module/Module.h"
 
 using namespace EGE;
+using namespace EGE::Math;
 
 namespace EGE { namespace Shaders{
-	class IShaderProgram
+	
+	class IShaderProgram : public Module::Module
 	{
 	public:		
 		void SetActive()const;
 
-		void Init();
-		void Destroy();
 	protected:
 		virtual ~IShaderProgram() {}
+
+		void LocalInit();
+		void LocalDestroy();
 
 		virtual void CreateInputLayout(std::vector<uint8_t> vertexShaderBuffer) = 0;
 		virtual void InitializeCBuffers() = 0;

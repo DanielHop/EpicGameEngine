@@ -1,7 +1,9 @@
 #pragma once
-namespace EGE {	namespace Models {
+namespace EGE {	namespace Math {
 		struct Vec4f
 		{
 			float x, y, z, a;
 		};
+
+
 }}
