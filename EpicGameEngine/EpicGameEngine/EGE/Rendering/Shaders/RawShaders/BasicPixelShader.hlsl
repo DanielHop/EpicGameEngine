@@ -13,17 +13,14 @@ struct AmbientLight
 struct PointLight
 {
 	float range;
-	float2 pos;
 	float3 colour;
+	float2 pos;
 	float2 padding;
 };
 
 cbuffer pointLightBuffer : register(b0)
 {
-	float	PointLightrange;
-	float3	PointLightcolour;
-	float2	PointLightpos;
-	float2	PointLightpadding;
+	PointLight pointLight;
 }
 
 float4 main(PixelIn pIn ) : SV_TARGET
@@ -32,16 +29,15 @@ float4 main(PixelIn pIn ) : SV_TARGET
 
 	AmbientLight al;
 	al.colour = float3(0.2, 0.2, 0.2);
-	
-	float dist = sqrt((PointLightpos.x - pIn.pos.x) * (PointLightpos.x - pIn.pos.x) + (PointLightpos.y - pIn.pos.y) * (PointLightpos.y - pIn.pos.y));
+	float corr = 16.f / 9.f;
+	float dist = sqrt((pointLight.pos.x - pIn.pos.x * corr) * (pointLight.pos.x - pIn.pos.x * corr) + (pointLight.pos.y - pIn.pos.y ) * (pointLight.pos.y - pIn.pos.y));
 	float att = 0;
-	if(true)
-	{
-		att = clamp(1.0 - dist*dist / (PointLightrange*PointLightrange), 0.0, 1.0);
-		att *= att;
-	}
-	retColour *=  float4(att * PointLightcolour.x, att * PointLightcolour.y, att * PointLightcolour.z, 0.0);
-	retColour += float4(att * PointLightcolour.x, att * PointLightcolour.y, att * PointLightcolour.z, 0.0);
+		
+	att = clamp(1.0 - dist*dist / (pointLight.range*pointLight.range), 0.0, 1.0);
+	att *= att;
+	
+	//retColour *=  float4(att * pointLight.colour.x, att * pointLight.colour.y, att * pointLight.colour.z, 0.0);
+	retColour += float4(att * pointLight.colour.x, att * pointLight.colour.y, att * pointLight.colour.z, 0.0);
 	//retColour += float4(al.colour, 0.0);
 	
 	retColour = min(retColour, 1.0);

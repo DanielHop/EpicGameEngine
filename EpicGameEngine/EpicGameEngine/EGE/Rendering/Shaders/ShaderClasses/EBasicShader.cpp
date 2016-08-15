@@ -17,12 +17,12 @@ namespace EGE { namespace Shaders{
 	void EBasicShader::InitializeCBuffers()
 	{
 		mPointLightBuffer = std::make_unique<ConstantBuffer>();
-		mPointLightBuffer->InitBuffer(sizeof(PointLight), SHADERKINDS::PixelShader);
+		mPointLightBuffer->InitBuffer(sizeof(PointLightBuffer), SHADERKINDS::PixelShader);
 
 		mCBufferPerInstance = std::make_unique<ConstantBuffer>();
 		mCBufferPerInstance->InitBuffer(sizeof(CBufferPerInstance), SHADERKINDS::VertexShader);
 
-		DirectX::XMMATRIX a = DirectX::XMMatrixPerspectiveFovLH(0.25f * 3.1415, 16.f / 9.f, 1.0f, 100.f);
+		DirectX::XMMATRIX a = DirectX::XMMatrixPerspectiveFovLH(0.25f * 3.1415f, Graphics::Window::AspectRatio(), 1.0f, 100.f);
 		//DirectX::XMMATRIX a = DirectX::XMMatrixIdentity();
 		mCBufferPerInstance->UpdateBuffer(&a);
 		mCBufferPerInstance->SetActiveBuffer(0);
