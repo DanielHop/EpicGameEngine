@@ -40,7 +40,8 @@ float4 main(PixelIn pIn ) : SV_TARGET
 		att = clamp(1.0 - dist*dist / (PointLightrange*PointLightrange), 0.0, 1.0);
 		att *= att;
 	}
-	retColour +=  float4(att * PointLightcolour.x, att * PointLightcolour.y, att * PointLightcolour.z, 0.0);
+	retColour *=  float4(att * PointLightcolour.x, att * PointLightcolour.y, att * PointLightcolour.z, 0.0);
+	retColour += float4(att * PointLightcolour.x, att * PointLightcolour.y, att * PointLightcolour.z, 0.0);
 	//retColour += float4(al.colour, 0.0);
 	
 	retColour = min(retColour, 1.0);
