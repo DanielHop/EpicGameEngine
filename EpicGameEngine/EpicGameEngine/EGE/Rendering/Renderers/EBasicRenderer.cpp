@@ -33,20 +33,24 @@ namespace EGE { namespace Rendering {
 	void EBasicRenderer::AddToStack(const Models::Sprite sprite)
 	{
 		Math::Vec4f colour = sprite.colour;
+
+		float x = sprite.pos.x * cos(sprite.rot) - sprite.pos.y * sin(sprite.rot);
+		float y = sprite.pos.x * sin(sprite.rot) + sprite.pos.y * cos(sprite.rot);
+
 		//ABOVE LEFT
-		*dataPtr = { {sprite.pos.x, sprite.pos.y, sprite.pos.z }, colour };
+		*dataPtr = { {x, y}, colour };
 		dataPtr++;
 
 		//ABOVE RIGHT
-		*dataPtr = { {sprite.pos.x + sprite.size.x, sprite.pos.y, sprite.pos.z },colour };
+		*dataPtr = { {x + sprite.size.x, y },colour };
 		dataPtr++;
 
 		//DOWN RIGHT
-		*dataPtr = { {sprite.pos.x + sprite.size.x, sprite.pos.y - sprite.size.y, sprite.pos.z },colour };
+		*dataPtr = { {x + sprite.size.x, y - sprite.size.y },colour };
 		dataPtr++;
 
 		//DOWN LEFT
-		*dataPtr = { { sprite.pos.x , sprite.pos.y - sprite.size.y, sprite.pos.z },colour };
+		*dataPtr = { { x , y - sprite.size.y },colour };
 		dataPtr++;
 
 		//Increase number of sprites

@@ -13,7 +13,7 @@ namespace EGE { namespace Rendering{
 	
 	struct Vertex
 	{
-		Vec3f pos;
+		Vec2f pos;
 		Vec4f colour;
 	};
 

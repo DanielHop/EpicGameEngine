@@ -19,7 +19,7 @@ void TestInstance::Init()
 
 	mRenderer->Init();
 
-	sprites.push_back({ {-0.5f, 0.5f, 1.5f}, {1.0f, 1.0f, 1.0f}, { 0.862745f, 0.0784314f, 0.235294f, 1.f} });
+	sprites.push_back({ {-0.5f, 0.5f}, {1.0f, 1.0f}, { 1, 0.f, 0.f, 1.f}, { 0 } });
 
 	p.range = 2.f;
 	p.pos = Vec2f{ 0.f, 0.f };

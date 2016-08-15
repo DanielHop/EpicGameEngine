@@ -1,6 +1,6 @@
 struct VertexIn
 {
-	float3 pos : Position;
+	float2 pos : Position;
 	float4 colour : Colour;
 };
 
@@ -29,7 +29,7 @@ cbuffer CBufferPerObject : register(b2)
 VertexOut main( VertexIn vIn )
 {
 	VertexOut vOut;
-	vOut.pos = mul(gProjMatrix, float4(vIn.pos.x, vIn.pos.y, vIn.pos.z, 1.0));
+	vOut.pos = mul(gProjMatrix, float4(vIn.pos.x, vIn.pos.y, 1.5, 1.0));
 	vOut.svPos = vOut.pos;
 	vOut.colour = vIn.colour;
 	return vOut;
