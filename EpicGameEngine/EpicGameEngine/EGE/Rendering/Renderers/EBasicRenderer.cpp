@@ -54,13 +54,6 @@ namespace EGE { namespace Rendering {
 		mNumOfSprites++;
 	}
 
-	Vec2f EBasicRenderer::getRot(Vec2f pos, float rot)
-	{
-		float x = pos.x * cos(rot) - pos.y * sin(rot);
-		float y = pos.x * sin(rot) + pos.y * cos(rot);
-		return Vec2f{ x, y };
-	}
-
 	void EBasicRenderer::End()
 	{
 		Graphics::D3D::gDeviceContext->Unmap(mVertexBuffer, 0);
