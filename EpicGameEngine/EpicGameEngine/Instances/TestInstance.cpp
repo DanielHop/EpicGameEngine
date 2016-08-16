@@ -19,7 +19,18 @@ void TestInstance::Init()
 
 	mRenderer->Init();
 
-	sprites.push_back({ {-0.5f, 0.5f}, {1.0f, 1.0f}, { 1, 0.f, 0.f, 1.f}, { 0 } });
+//	sprites.push_back({ {-0.5f, 0.5f}, {1.0f, 1.0f}, { 1, 0.f, 0.f, 1.f}, { 0.25 * 3.1415f } });
+
+	auto nSprites = 200;
+	auto length = 2.0f / (float)nSprites;
+	for (auto y = 0; y < nSprites; y++)
+	{
+		for (auto x = 0; x < nSprites; x++)
+		{
+			sprites.push_back({ { (float)x / (float)nSprites * 2 - 1.f, (float)y / (float)nSprites * 2 - 1.f },{ length , length },{ 1.0f, 0.0f, 0.0f, 1.0f },{ 0.25 * 3.1415f } });
+
+		}
+	}
 
 	p.range = 2.f;
 	p.pos = Vec2f{ 0.f, 0.f };

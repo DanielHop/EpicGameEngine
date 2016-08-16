@@ -40,6 +40,8 @@ namespace EGE { namespace Rendering{
 		void InitializeIndexBuffer();
 
 	private:
+		Vec2f getRot(Vec2f pos, float rot);
+
 		int mNumOfSprites;
 		
 		Vertex* dataPtr;

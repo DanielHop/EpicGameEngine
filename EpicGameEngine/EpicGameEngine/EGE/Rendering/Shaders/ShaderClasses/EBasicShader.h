@@ -39,6 +39,7 @@ namespace EGE { namespace Shaders{
 
 
 	private:
+		
 		std::unique_ptr<ConstantBuffer> mPointLightBuffer;
 		std::unique_ptr<ConstantBuffer> mCBufferPerInstance;
 	};

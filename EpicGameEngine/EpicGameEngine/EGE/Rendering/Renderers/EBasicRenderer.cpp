@@ -34,27 +34,31 @@ namespace EGE { namespace Rendering {
 	{
 		Math::Vec4f colour = sprite.colour;
 
-		float x = sprite.pos.x * cos(sprite.rot) - sprite.pos.y * sin(sprite.rot);
-		float y = sprite.pos.x * sin(sprite.rot) + sprite.pos.y * cos(sprite.rot);
-
 		//ABOVE LEFT
-		*dataPtr = { {x, y}, colour };
+		*dataPtr = { sprite.pos, colour };
 		dataPtr++;
 
 		//ABOVE RIGHT
-		*dataPtr = { {x + sprite.size.x, y },colour };
+		*dataPtr = { {sprite.pos.x + sprite.size.x, sprite.pos.y} ,colour };
 		dataPtr++;
 
 		//DOWN RIGHT
-		*dataPtr = { {x + sprite.size.x, y - sprite.size.y },colour };
+		*dataPtr = { {sprite.pos.x + sprite.size.x, sprite.pos.y - sprite.size.y},colour };
 		dataPtr++;
 
 		//DOWN LEFT
-		*dataPtr = { { x , y - sprite.size.y },colour };
+		*dataPtr = { { sprite.pos.x , sprite.pos.y - sprite.size.y }, colour };
 		dataPtr++;
 
 		//Increase number of sprites
 		mNumOfSprites++;
+	}
+
+	Vec2f EBasicRenderer::getRot(Vec2f pos, float rot)
+	{
+		float x = pos.x * cos(rot) - pos.y * sin(rot);
+		float y = pos.x * sin(rot) + pos.y * cos(rot);
+		return Vec2f{ x, y };
 	}
 
 	void EBasicRenderer::End()
