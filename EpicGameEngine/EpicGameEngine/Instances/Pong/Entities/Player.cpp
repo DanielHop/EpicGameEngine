@@ -2,23 +2,25 @@
 
 void Player::Init()
 {
-	mSprite.colour = { 1.0f, 1.0f, 1.0f, 1.0f };
-	mSprite.pos = { 0.5f, 0.15f / 2.f, 1.0f };
-	mSprite.size = { 0.025f, 0.15f };
-	mSprite.rot = 0;
+	mPaddle.Init(true);
 }
 
 void Player::Update(float dt)
 {
-
+	mPaddle.Update(dt);
 }
 
 void Player::MoveUp()
 {
-	mSprite.pos = { mSprite.pos.x, mSprite.pos.y + speed, 1.0f };
+	mPaddle.SetDirection(1);
 }
 
 void Player::MoveDown()
 {
-	mSprite.pos = { mSprite.pos.x, mSprite.pos.y - speed, 1.0f };
+	mPaddle.SetDirection(-1);
+}
+
+void Player::Stop()
+{
+	mPaddle.SetDirection(0);
 }

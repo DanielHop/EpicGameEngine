@@ -28,7 +28,8 @@ namespace EGE { namespace Shaders{
 		mCamPositionVer = std::make_unique<ConstantBuffer>();
 		mCamPositionVer->InitBuffer(sizeof(CamPos), SHADERKINDS::VertexShader);
 
-		DirectX::XMMATRIX a = DirectX::XMMatrixPerspectiveFovLH(0.25f * 3.1415f, Graphics::Window::AspectRatio(), 1.0f, 100.f);
+		//DirectX::XMMATRIX a = DirectX::XMMatrixPerspectiveFovLH(0.25f * 3.1415f, Graphics::Window::AspectRatio(), 1.0f, 100.f);
+		DirectX::XMMATRIX a = DirectX::XMMatrixOrthographicLH(Graphics::Window::AspectRatio() * 2, 2.0f, 0.0f, 100.f);
 		//DirectX::XMMATRIX a = DirectX::XMMatrixIdentity();
 		mCBufferPerInstance->UpdateBuffer(&a);
 		mCBufferPerInstance->SetActiveBuffer(0);

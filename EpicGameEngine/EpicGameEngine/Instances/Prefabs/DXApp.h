@@ -29,7 +29,8 @@ protected:
 	virtual void Update(const Timestep dt) = 0;
 	virtual void Render() = 0;
 
-	virtual void Keydown(std::string key) {}
+	virtual void KeyDown(std::string key) {}
+	virtual void KeyUp(std::string key) {}
 	void InitMessageloop();
 
 protected:

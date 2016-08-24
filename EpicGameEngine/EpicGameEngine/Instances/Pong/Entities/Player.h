@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../EGE/EGE.h"
+#include "Paddle.h"
 
 class Player
 {
@@ -10,9 +10,9 @@ public:
 
 	void MoveUp();
 	void MoveDown();
+	void Stop();
 
-	Sprite GetSprite() { return mSprite; }
+	Paddle GetPaddle() { return mPaddle; }
 private:
-	Sprite mSprite;
-	float speed{ 0.01f };
+	Paddle mPaddle;
 };

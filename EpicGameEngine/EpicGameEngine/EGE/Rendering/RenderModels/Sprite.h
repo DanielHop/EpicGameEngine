@@ -10,7 +10,5 @@ namespace EGE {	namespace Models {
 			Math::Vec3f pos;
 			Math::Vec2f size;
 			Math::Vec4f colour;
-
-			float rot;
 		};
 }}

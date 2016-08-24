@@ -62,16 +62,42 @@ void DXApp::InitMessageloop()
 			switch (wParam)
 			{
 			case 0x41:
-				Keydown("A");
+				KeyDown("A");
 				break;
 			case 0x44:
-				Keydown("D");
+				KeyDown("D");
 				break;
-			case 0x57:
-				Keydown("W");
+			case 0x50:
+				KeyDown("P");
+				break;
+			case 0x51:
+				KeyDown("Q");
+				break;
+			case 0x52:
+				KeyDown("R");
 				break;
 			case 0x53:
-				Keydown("S");
+				KeyDown("S");
+				break;
+			case 0x57:
+				KeyDown("W");
+				break;
+			}
+			break;
+		case WM_KEYUP:
+			switch (wParam)
+			{
+			case 0x41:
+				KeyUp("A");
+				break;
+			case 0x44:
+				KeyUp("D");
+				break;
+			case 0x57:
+				KeyUp("W");
+				break;
+			case 0x53:
+				KeyUp("S");
 				break;
 			}
 			break;
