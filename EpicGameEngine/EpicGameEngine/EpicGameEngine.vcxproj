@@ -26,26 +26,26 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -150,13 +150,7 @@
     <ClCompile Include="EGE\Rendering\Shaders\ShaderClasses\EBasicShader.cpp" />
     <ClCompile Include="EGE\Util\BasicReader.cpp" />
     <ClCompile Include="EGE\Util\GameTimer.cpp" />
-    <ClCompile Include="Instances\Pong\Entities\Ball.cpp" />
-    <ClCompile Include="Instances\Pong\Entities\Enemy.cpp" />
-    <ClCompile Include="Instances\Pong\Entities\Paddle.cpp" />
-    <ClCompile Include="Instances\Pong\Entities\Player.cpp" />
-    <ClCompile Include="Instances\Prefabs\DXApp.cpp" />
-    <ClCompile Include="Instances\Pong\Pong.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="EGE\Prefabs\DXApp.cpp" />
     <ClCompile Include="EGE\Rendering\Window\EScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -178,9 +172,7 @@
     <ClInclude Include="EGE\Util\EGEUtil.h" />
     <ClInclude Include="Instances\Pong\Entities\Ball.h" />
     <ClInclude Include="Instances\Pong\Entities\Enemy.h" />
-    <ClInclude Include="Instances\Pong\Entities\Paddle.h" />
-    <ClInclude Include="Instances\Pong\Entities\Player.h" />
-    <ClInclude Include="Instances\Prefabs\DXApp.h" />
+    <ClInclude Include="EGE\Prefabs\DXApp.h" />
     <ClInclude Include="Instances\Pong\Pong.h" />
   </ItemGroup>
   <ItemGroup>

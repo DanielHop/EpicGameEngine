@@ -1,9 +1,1 @@
-﻿  main.cpp
-  Pong.cpp
-  Player.cpp
-  Paddle.cpp
-  Enemy.cpp
-  Ball.cpp
-  Generating Code...
-  EpicGameEngine.vcxproj -> C:\Programming\CPP\EpicGameEngine\EpicGameEngine\Debug\EpicGameEngine.exe
-  EpicGameEngine.vcxproj -> C:\Programming\CPP\EpicGameEngine\EpicGameEngine\Debug\EpicGameEngine.pdb (Full PDB)
+﻿  EpicGameEngine.vcxproj -> C:\Programming\CPP\EpicGameEngine\EpicGameEngine\Debug\EpicGameEngine.lib

@@ -15,13 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="EGE\Util\BasicReader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Instances\Prefabs\DXApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EGE\Rendering\Renderers\EBasicRenderer.cpp">
@@ -48,19 +42,7 @@
     <ClCompile Include="EGE\Util\GameTimer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Instances\Pong\Pong.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Instances\Pong\Entities\Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Instances\Pong\Entities\Paddle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Instances\Pong\Entities\Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Instances\Pong\Entities\Ball.cpp">
+    <ClCompile Include="EGE\Prefabs\DXApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -72,9 +54,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EGE\Util\EGEUtil.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Instances\Prefabs\DXApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EGE\Rendering\Renderers\EBasicRenderer.h">
@@ -119,16 +98,13 @@
     <ClInclude Include="Instances\Pong\Pong.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Instances\Pong\Entities\Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Instances\Pong\Entities\Paddle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Instances\Pong\Entities\Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Instances\Pong\Entities\Ball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Prefabs\DXApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
