@@ -13,7 +13,7 @@ namespace EGE { namespace Rendering{
 	
 	struct Vertex
 	{
-		Vec2f pos;
+		Vec3f pos;
 		Vec4f colour;
 	};
 
@@ -25,6 +25,9 @@ namespace EGE { namespace Rendering{
 		~EBasicRenderer() {}
 
 		void SetPointLight(const Shaders::PointLight pointLight)const;
+		void SetCamPos(Vec2f newPos) { this->mCameraPos = newPos; }
+		void MoveCamPos(Vec2f dX) { this->mCameraPos.x += dX.x; this->mCameraPos.y += dX.y; }
+
 	protected:
 		void InitializeBuffers()override;
 		void InitializeShader()	override;
@@ -36,15 +39,16 @@ namespace EGE { namespace Rendering{
 		void Flush(const bool shouldSetBuffers)const override;
 
 		void DeleteShader() override;
+
 	private:
 		void InitializeIndexBuffer();
 
 	private:
 		int mNumOfSprites;
-		
 		Vertex* dataPtr;
-
+		Vec2f mCameraPos{ 0.f, 0.f };
 		std::unique_ptr<Shaders::EBasicShader> mShader{ new Shaders::EBasicShader() };
+
 	};
 
 }}

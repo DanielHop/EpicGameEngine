@@ -5,15 +5,21 @@ DXApp::DXApp(const HINSTANCE hInstance, const int nShowCmd)
 
 	Window::gHInstance = hInstance;
 	Window::gShowCmd = nShowCmd;
+
+	mScreen = std::make_unique<EScreen>();
+	mGameTimer = std::make_unique<GameTimer>();
 }
 
 void DXApp::Run()
 {
-	screen->Init();
+	mScreen->Init();
 	InitMessageloop();
 	Init();
+	
+	mGameState = GameState::INGAME;
 
-	MSG msg = { 0 };
+	auto dt = 0.f;
+	auto msg = MSG{ 0 };
 	while (msg.message != WM_QUIT)
 	{
 		if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
@@ -23,32 +29,52 @@ void DXApp::Run()
 		}
 		else
 		{
-			screen->Prepare();
-			Update(0.0f);
+			mGameTimer->Tick();
+			if (mGameState == GameState::INGAME)
+			{
+				dt += mGameTimer->DeltaTime();
+				if(dt >= 1.f / TICKSPERSECOND)
+				{
+					Update(mGameTimer->DeltaTime() / (1.f / TICKSPERSECOND));
+					dt = 0;
+				}
+			}
+			mScreen->Prepare();
 			Render();
-			screen->Update();
+			mScreen->Update();
 		}
 	}
 
 	Destroy();
-	screen->Destroy();
+	mScreen->Destroy();
 }
 
 void DXApp::InitMessageloop()
 {
-	screen->SetMessageloopFunction([this](HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)->LRESULT
+	mScreen->SetMessageloopFunction([this](HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)->LRESULT
 	{
 		switch (msg)
 		{
 		case WM_DESTROY:
 			PostQuitMessage(0);
+			break;
 		case WM_KEYDOWN:
-			if (wParam == 0x57)
+			switch (wParam)
+			{
+			case 0x41:
+				Keydown("A");
+				break;
+			case 0x44:
+				Keydown("D");
+				break;
+			case 0x57:
 				Keydown("W");
-			if (wParam == 0x53)
+				break;
+			case 0x53:
 				Keydown("S");
-			return 0;
-
+				break;
+			}
+			break;
 		}
 		return DefWindowProc(hwnd, msg, wParam, lParam);
 	});

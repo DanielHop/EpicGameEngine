@@ -7,7 +7,8 @@
 namespace EGE {	namespace Models {
 		struct Sprite
 		{
-			Math::Vec2f pos, size;
+			Math::Vec3f pos;
+			Math::Vec2f size;
 			Math::Vec4f colour;
 
 			float rot;

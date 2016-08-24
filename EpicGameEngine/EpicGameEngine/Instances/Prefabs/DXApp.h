@@ -6,11 +6,15 @@
 
 using Timestep = float;
 
-using namespace EGE::Util;
-using namespace EGE::Shaders;
-using namespace EGE::Rendering;
-using namespace EGE::Models;
 
+#define TICKSPERSECOND 60.f
+
+enum class GameState
+{
+	MAINMENU,
+	INGAME,
+	PAUSE
+};
 class DXApp
 {
 public:
@@ -27,6 +31,11 @@ protected:
 
 	virtual void Keydown(std::string key) {}
 	void InitMessageloop();
+
+protected:
+	GameState mGameState;
+
 private:
-	std::unique_ptr<EScreen> screen{ new EScreen };
+	std::unique_ptr<EScreen> mScreen;
+	std::unique_ptr<GameTimer> mGameTimer;
 };

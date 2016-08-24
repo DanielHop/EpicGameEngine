@@ -1,9 +1,9 @@
 #include <windows.h>
 
-#include "Instances/TestInstance.h"
+#include "Instances/Pong/Pong.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine, int nShowCmd)
 {
-	TestInstance test(hInstance, nShowCmd);
+	Pong test(hInstance, nShowCmd);
 	test.Run();
 }

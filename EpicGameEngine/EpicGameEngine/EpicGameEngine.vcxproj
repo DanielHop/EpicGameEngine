@@ -149,8 +149,10 @@
     <ClCompile Include="EGE\Rendering\Shaders\ShaderClasses\IShaderProgram.cpp" />
     <ClCompile Include="EGE\Rendering\Shaders\ShaderClasses\EBasicShader.cpp" />
     <ClCompile Include="EGE\Util\BasicReader.cpp" />
+    <ClCompile Include="EGE\Util\GameTimer.cpp" />
+    <ClCompile Include="Instances\Pong\Entities\Player.cpp" />
     <ClCompile Include="Instances\Prefabs\DXApp.cpp" />
-    <ClCompile Include="Instances\TestInstance.cpp" />
+    <ClCompile Include="Instances\Pong\Pong.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="EGE\Rendering\Window\EScreen.cpp" />
   </ItemGroup>
@@ -160,6 +162,7 @@
     <ClInclude Include="EGE\Rendering\Shaders\ShaderClasses\ConstantBuffer.h" />
     <ClInclude Include="EGE\Rendering\Window\EScreen.h" />
     <ClInclude Include="EGE\Rendering\RenderModels\Sprite.h" />
+    <ClInclude Include="EGE\Util\GameTimer.h" />
     <ClInclude Include="EGE\Util\Math\Matrix4f.h" />
     <ClInclude Include="EGE\Util\Math\Vec2f.h" />
     <ClInclude Include="EGE\Util\Math\Vec3f.h" />
@@ -170,8 +173,9 @@
     <ClInclude Include="EGE\Rendering\Shaders\ShaderClasses\IShaderProgram.h" />
     <ClInclude Include="EGE\Util\BasicReader.h" />
     <ClInclude Include="EGE\Util\EGEUtil.h" />
+    <ClInclude Include="Instances\Pong\Entities\Player.h" />
     <ClInclude Include="Instances\Prefabs\DXApp.h" />
-    <ClInclude Include="Instances\TestInstance.h" />
+    <ClInclude Include="Instances\Pong\Pong.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="EGE\Rendering\Shaders\RawShaders\BasicPixelShader.hlsl">

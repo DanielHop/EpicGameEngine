@@ -28,26 +28,28 @@ namespace EGE { namespace Rendering {
 
 		Graphics::D3D::gDeviceContext->Map(mVertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedRes);
 		dataPtr = (Vertex*) mappedRes.pData;
+
+		mShader->SetCamPos(mCameraPos);
 	}
 
 	void EBasicRenderer::AddToStack(const Models::Sprite sprite)
 	{
 		Math::Vec4f colour = sprite.colour;
-
+		
 		//ABOVE LEFT
 		*dataPtr = { sprite.pos, colour };
 		dataPtr++;
 
 		//ABOVE RIGHT
-		*dataPtr = { {sprite.pos.x + sprite.size.x, sprite.pos.y} ,colour };
+		*dataPtr = { { sprite.pos.x + sprite.size.x,  sprite.pos.y, sprite.pos.z} ,colour };
 		dataPtr++;
 
 		//DOWN RIGHT
-		*dataPtr = { {sprite.pos.x + sprite.size.x, sprite.pos.y - sprite.size.y},colour };
+		*dataPtr = { { sprite.pos.x + sprite.size.x,  sprite.pos.y - sprite.size.y, sprite.pos.z },colour };
 		dataPtr++;
 
 		//DOWN LEFT
-		*dataPtr = { { sprite.pos.x , sprite.pos.y - sprite.size.y }, colour };
+		*dataPtr = { { sprite.pos.x ,  sprite.pos.y - sprite.size.y, sprite.pos.z }, colour };
 		dataPtr++;
 
 		//Increase number of sprites

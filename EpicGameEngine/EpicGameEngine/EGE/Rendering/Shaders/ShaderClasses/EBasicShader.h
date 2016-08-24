@@ -24,6 +24,11 @@ namespace EGE { namespace Shaders{
 	{
 		Matrix4f gProjMatrix;
 	};
+	
+	struct CamPos
+	{
+		Vec2f pos, padding;
+	};
 
 	class EBasicShader : public IShaderProgram
 	{
@@ -31,16 +36,20 @@ namespace EGE { namespace Shaders{
 		EBasicShader(){ SetShaderPaths( "C:/Programming/CPP/EpicGameEngine/EpicGameEngine/Debug/BasicVertexShader.cso" , "C:/Programming/CPP/EpicGameEngine/EpicGameEngine/Debug/BasicPixelShader.cso" ); }
 		~EBasicShader() {}
 		void SetPointLight(PointLight pl);
+		void SetCamPos(Vec2f pos);
 
 	protected:
 		void CreateInputLayout(std::vector<uint8_t> vertexShaderBuffer)override;
 		void InitializeCBuffers()override;
 		void CleanUpBuffers()override;
 
-
 	private:
-		
+		void UpdatePointLight();
+	private:
+		Vec2f mCameraPos{ 0.0 };
+
 		std::unique_ptr<ConstantBuffer> mPointLightBuffer;
+		std::unique_ptr<ConstantBuffer> mCamPositionVer, mCamPositionPix;
 		std::unique_ptr<ConstantBuffer> mCBufferPerInstance;
 	};
 }}

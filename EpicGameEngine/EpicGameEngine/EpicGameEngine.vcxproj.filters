@@ -24,9 +24,6 @@
     <ClCompile Include="Instances\Prefabs\DXApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Instances\TestInstance.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="EGE\Rendering\Renderers\EBasicRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -48,6 +45,15 @@
     <ClCompile Include="EGE\Rendering\Window\EScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EGE\Util\GameTimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Instances\Pong\Pong.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Instances\Pong\Entities\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EGE\EGE.h">
@@ -60,9 +66,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Instances\Prefabs\DXApp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Instances\TestInstance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EGE\Rendering\Renderers\EBasicRenderer.h">
@@ -99,6 +102,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EGE\Util\Math\Matrix4f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EGE\Util\GameTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Instances\Pong\Pong.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Instances\Pong\Entities\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

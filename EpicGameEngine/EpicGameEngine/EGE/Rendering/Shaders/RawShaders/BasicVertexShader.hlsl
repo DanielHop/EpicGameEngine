@@ -1,6 +1,6 @@
 struct VertexIn
 {
-	float2 pos : Position;
+	float3 pos : Position;
 	float4 colour : Colour;
 };
 
@@ -18,7 +18,7 @@ cbuffer CbufferPerInstance : register(b0)
 
 cbuffer CBufferPerFrame : register(b1)
 {
-	float4x4 gViewMatrix;
+	float2 camPos, padding;
 }
 
 cbuffer CBufferPerObject : register(b2)
@@ -29,8 +29,10 @@ cbuffer CBufferPerObject : register(b2)
 VertexOut main( VertexIn vIn )
 {
 	VertexOut vOut;
-	vOut.pos = mul(gProjMatrix, float4(vIn.pos.x, vIn.pos.y, 1.5, 1.0));
-	vOut.svPos = vOut.pos;
+	vOut.svPos = mul(gProjMatrix, float4(vIn.pos.x - camPos.x, vIn.pos.y - camPos.y, vIn.pos.z, 1.0));
+	vOut.pos = vOut.svPos;
+	//vOut.pos = float4(vIn.pos.x, vIn.pos.y, vIn.pos.z, 1.0);
+	//vOut.pos = float4(vIn.pos.x - camPos.x, vIn.pos.y - camPos.y, vIn.pos.z, 1.0);
 	vOut.colour = vIn.colour;
 	return vOut;
 }

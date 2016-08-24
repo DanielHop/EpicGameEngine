@@ -47,6 +47,8 @@ namespace EGE { namespace Graphics{
 		HINSTANCE	gHInstance;
 		HWND		gMainHandle;
 		int			gShowCmd;
+		int			gWidth{ 1280 };
+		int			gHeight{ 720 };
 		bool		gWindowed;
 
 		float AspectRatio()
